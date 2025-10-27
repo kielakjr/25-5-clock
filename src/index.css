@@ -19,3 +19,50 @@ body {
   background-color: #f0f0f0;
   color: #333;
 }
+
+.lengths-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  gap: 20px;
+}
+
+.lengths-container > div {
+  flex: 1;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.lengths-container h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.lengths-container button {
+  width: 30px;
+  height: 30px;
+  font-size: 1.2rem;
+  margin: 0 5px;
+  cursor: pointer;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.lengths-container p {
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.lengths-container span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  gap: 10px;
+}

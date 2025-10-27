@@ -1,4 +1,5 @@
 import React from 'react'
+import { useEffect } from 'react'
 import Length from './components/Length.jsx'
 import Timer from './components/Timer.jsx'
 import Buttons from './components/Buttons.jsx'
@@ -18,6 +19,7 @@ const App = () => {
   const [breakLength, setBreakLength] = React.useState(5);
   const [sessionLength, setSessionLength] = React.useState(25);
   const [isRunning, setIsRunning] = React.useState(false);
+  const [timerType, setTimerType] = React.useState('session');
 
   const initialCount = convertMinutesToSeconds(sessionLength);
 
@@ -28,7 +30,23 @@ const App = () => {
     setCount((prevCount) => prevCount - 1);
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
+    if (count === 0) {
+      if (timerType === 'session') {
+        setTimerType('break');
+        setCount(convertMinutesToSeconds(breakLength));
+      } else {
+        setTimerType('session');
+        setCount(convertMinutesToSeconds(sessionLength));
+      }
+    }
+  }, [count, timerType, breakLength, sessionLength]);
+
+  useEffect(() => {
+    setCount(convertMinutesToSeconds(sessionLength));
+  }, [sessionLength]);
+
+  useEffect(() => {
     let timer;
     if (isRunning && count > 0) {
       timer = setTimeout(countdown, 1000);
@@ -42,7 +60,7 @@ const App = () => {
         <Length value={breakLength} onUpdate={setBreakLength} isRunning={isRunning}>Break Length</Length>
         <Length value={sessionLength} onUpdate={setSessionLength} isRunning={isRunning}>Session Length</Length>
       </div>
-      <Timer timerValue={convertSecondsToMinutesAndSeconds(count)} />
+      <Timer timerValue={convertSecondsToMinutesAndSeconds(count)} label={timerType === 'session' ? 'Session' : 'Break'} />
       <Buttons onRun={setIsRunning} isRunning={isRunning} onReset={() => setCount(initialCount)} />
     </>
   )

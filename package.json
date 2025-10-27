@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://kielakjr.github.io/25-5-clock/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

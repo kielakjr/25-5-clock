@@ -66,3 +66,26 @@ body {
   margin-top: 10px;
   gap: 10px;
 }
+
+.timer-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 80%;
+  margin: 20px auto;
+  text-align: center;
+  border-radius: 10px;
+  border: 2px solid #007bff;
+}
+
+.timer-container h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  font-weight: normal;
+}
+
+.timer-container p {
+  font-size: 4rem;
+  margin: 20px 0;
+}

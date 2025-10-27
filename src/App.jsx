@@ -1,5 +1,6 @@
 import React from 'react'
 import Length from './components/Length.jsx'
+import Timer from './components/Timer.jsx'
 
 const App = () => {
 
@@ -12,6 +13,7 @@ const App = () => {
         <Length value={breakLength} onUpdate={setBreakLength}>Break Length</Length>
         <Length value={sessionLength} onUpdate={setSessionLength}>Session Length</Length>
       </div>
+      <Timer sessionLength={sessionLength} />
     </>
   )
 }

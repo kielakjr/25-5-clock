@@ -1,16 +1,78 @@
-# React + Vite
+# 25 + 5 Clock
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Pomodoro-style timer built with React and Vite. This timer helps you manage your work sessions and breaks using the popular 25+5 technique (25 minutes of work followed by 5 minutes of break).
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Customizable Timer Lengths**: Adjust both session and break durations (1-60 minutes)
+- **Session/Break Toggle**: Automatically switches between work sessions and breaks
+- **Visual Feedback**: Last minute countdown displays in red
+- **Audio Alert**: Plays a sound when timer reaches zero
+- **Pause/Resume**: Control your timer with play and pause functionality
+- **Reset**: Quickly reset to default settings (25 min session, 5 min break)
 
-## React Compiler
+## Demo
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+View the live demo: [https://kielakjr.github.io/25-5-clock](https://kielakjr.github.io/25-5-clock)
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React 19
+- Vite
+- React Icons
+
+## Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/kielakjr/25-5-clock.git
+cd 25-5-clock
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Run the development server:
+
+```bash
+npm run dev
+```
+
+4. Build for production:
+
+```bash
+npm run build
+```
+
+## Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run deploy` - Deploy to GitHub Pages
+- `npm run lint` - Run ESLint
+
+## Project Structure
+
+```
+25+5-clock/
+├── src/
+│   ├── components/
+│   │   ├── Length.jsx      # Break/Session length controls
+│   │   ├── Timer.jsx       # Timer display
+│   │   └── Buttons.jsx     # Play/Pause/Reset controls
+│   ├── assets/
+│   │   └── beep_sound.mp3  # Alert sound
+│   ├── App.jsx             # Main application logic
+│   ├── main.jsx            # Application entry point
+│   └── index.css           # Global styles
+└── index.html              # HTML template
+```
+
+## License
+
+This project is open source and available under the MIT License.

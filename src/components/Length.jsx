@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Length = ({children, value, onUpdate, isRunning}) => {
+const Length = ({children, value, onUpdate, isRunning, lengthType}) => {
 
     const handleDecrement = () => {
         if (value > 1) {
@@ -16,8 +16,8 @@ const Length = ({children, value, onUpdate, isRunning}) => {
 
     return (
         <div>
-            <h2>{children}</h2>
-            <p><span><button onClick={handleDecrement} disabled={isRunning}>-</button>{value}<button onClick={handleIncrement} disabled={isRunning}>+</button></span></p>
+            <h2 id={`${lengthType}-label`}>{children}</h2>
+            <p><span><button id={`${lengthType}-decrement`} onClick={handleDecrement} disabled={isRunning}>-</button><span id={`${lengthType}-length`}>{value}</span><button id={`${lengthType}-increment`} onClick={handleIncrement} disabled={isRunning}>+</button></span></p>
         </div>
     )
 }

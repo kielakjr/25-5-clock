@@ -40,7 +40,7 @@ const App = () => {
         setCount(convertMinutesToSeconds(sessionLength));
       }
     }
-  }, [count, timerType, breakLength, sessionLength]);
+  }, [count]);
 
   useEffect(() => {
     setCount(convertMinutesToSeconds(sessionLength));
@@ -57,8 +57,8 @@ const App = () => {
   return (
     <>
       <div className='lengths-container'>
-        <Length value={breakLength} onUpdate={setBreakLength} isRunning={isRunning}>Break Length</Length>
-        <Length value={sessionLength} onUpdate={setSessionLength} isRunning={isRunning}>Session Length</Length>
+        <Length lengthType="break" value={breakLength} onUpdate={setBreakLength} isRunning={isRunning}>Break Length</Length>
+        <Length lengthType="session" value={sessionLength} onUpdate={setSessionLength} isRunning={isRunning}>Session Length</Length>
       </div>
       <Timer timerValue={convertSecondsToMinutesAndSeconds(count)} label={timerType === 'session' ? 'Session' : 'Break'} />
       <Buttons onRun={setIsRunning} isRunning={isRunning} onReset={() => setCount(initialCount)} />

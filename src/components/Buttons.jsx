@@ -14,8 +14,8 @@ const Buttons = ({ onRun, isRunning, onReset }) => {
 
   return (
     <div className='buttons-container'>
-        <button onClick={handlePlay}>{isRunning ? <FaPause /> : <FaPlay />}</button>
-        <button onClick={handleReset}><FaRedo /></button>
+        <button id="start_stop" onClick={handlePlay}>{isRunning ? <FaPause /> : <FaPlay />}</button>
+        <button id="reset" onClick={handleReset}><FaRedo /></button>
     </div>
   )
 }

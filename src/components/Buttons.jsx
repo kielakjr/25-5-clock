@@ -1,11 +1,21 @@
 import React from 'react'
 import {FaPlay, FaPause, FaRedo} from'react-icons/fa'
 
-const Buttons = () => {
+const Buttons = ({ onRun, isRunning, onReset }) => {
+
+  const handlePlay = () => {
+    onRun(prevIsRunning => !prevIsRunning);
+  }
+
+  const handleReset = () => {
+    onRun(false);
+    onReset();
+  }
+
   return (
     <div className='buttons-container'>
-        <button><FaPlay /></button>
-        <button><FaRedo /></button>
+        <button onClick={handlePlay}>{isRunning ? <FaPause /> : <FaPlay />}</button>
+        <button onClick={handleReset}><FaRedo /></button>
     </div>
   )
 }

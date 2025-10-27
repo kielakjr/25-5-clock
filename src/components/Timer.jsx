@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Timer = ({ sessionLength }) => {
+const Timer = ({ timerValue }) => {
   return (
     <div className='timer-container'>
       <h2>Session</h2>
-      <p>{sessionLength}:00</p>
+      <p>{timerValue.minutes}:{timerValue.seconds < 10 ? `0${timerValue.seconds}` : timerValue.seconds}</p>
     </div>
   )
 }
